@@ -20,12 +20,10 @@ pipeline {
 		  }	
     }
 
-   		stage("Publish HTML Report")
-		{
-		 steps{
+   		stage("Publish HTML Report"){{
 		 	echo "publishing HTML Reports..."
 			publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/Project1-InsureMe/target/sure			    fire-reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
-		      }
+		      
 		}	
 
 }
