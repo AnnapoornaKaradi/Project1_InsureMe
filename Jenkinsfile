@@ -31,9 +31,9 @@ pipeline {
 		} 
 		stage('Pushing the image to dockerhub'){
 		steps{
-			 withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerHubPassword',usernameVariable: 'dockerHubUser')]) {
-			 sh 'docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}'
-			 sh 'docker push annapoornakaradi/project1_insureme'
+			 withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
+			 sh 'docker push annapoornakaradi/project1_insureme:$BUILD_NUMBER'
+
              }
 	    } 
 	  }
