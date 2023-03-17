@@ -31,7 +31,7 @@ pipeline {
 		} 
 		stage('Pushing the image to dockerhub'){
 		steps{
-			 withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
+			 withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
 			 sh 'docker push annapoornakaradi/project1_insureme:$BUILD_NUMBER'
 
              }
