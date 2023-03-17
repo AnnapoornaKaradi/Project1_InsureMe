@@ -6,9 +6,8 @@
 
   tasks:
     - name: Update apt
-      apt-get: 
-       name: Update
-       state: present
+      become: true
+      command: sudo apt-get update
 
     - name: Install docker
       apt: 
