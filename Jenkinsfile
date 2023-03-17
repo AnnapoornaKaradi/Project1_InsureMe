@@ -23,5 +23,12 @@ pipeline {
 		      publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/Project1-InsureMe/target/surefire-reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
 		  }
 		}	
+		stage('Containerize the application'){
+		steps{
+			echo 'Creating a docker image'
+			sh 'docker build -t annapoornakaradi/project1_insureme'
+		    }
+		} 
+		
            }
 }
