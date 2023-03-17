@@ -6,7 +6,7 @@
 
   tasks:
     - name: Update apt
-      apt: 
+      apt-get: 
        name: Update
        state: present
 
