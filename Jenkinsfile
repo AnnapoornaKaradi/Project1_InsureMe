@@ -26,7 +26,7 @@ pipeline {
 		stage('Containerize the application'){
 		steps{
 			echo 'Creating a docker image'
-			sh 'docker build -t annapoornakaradi/project1_insureme'
+			sh 'docker build -t annapoornakaradi/project1_insureme .'
 		    }
 		} 
 		
