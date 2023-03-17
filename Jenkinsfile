@@ -37,5 +37,11 @@ pipeline {
              }
 	    } 
 	  }
+	  	stage('Configure and deploy to the test-server'){
+		steps{
+			ansiblePlaybook become: true, credentialsId: 'ansible-key', disableHostKeyChecking: true, inventory: '/etc/ansible/hosts', playbook:'/var/lib/jenkins/workspace/Project1-InsureMe/playbook.yml'
+		     }
+		    }
+
 	}
 }
