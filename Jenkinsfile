@@ -29,6 +29,10 @@ pipeline {
 			sh 'docker build -t annapoornakaradi/project1_insureme .'
 		    }
 		} 
-		
+		stage('Pushing the image to dockerhub'){
+		steps{
+			 withCredentials([string(credentialsId: 'Docker_id', variable: 'dockerHubPassword',usernameVariable: 'dockerHubUser')]) {
+			 sh 'docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
+			 sh 'docker push annapoornakaradi/project1_insureme'
            }
 }
