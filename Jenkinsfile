@@ -6,10 +6,7 @@ pipeline {
 
 	stages {
 
-		stage("prepare the environment"){
-		echo "initializing variable"
-		}
-		stage("checkout"){
+		stage("Pull the Project from GitHub"){
 		steps{
 			git 'https://github.com/AnnapoornaKaradi/Project1_InsureMe.git'
 		     }
